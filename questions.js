@@ -52,3 +52,24 @@ var questions = [
         answer: "font-size"
     },
   ];
+
+  //creating the array for buttons
+  var startBtn = document.getElementById("startBtn");
+  var highscoreBtn = document.getElementById("highScores");
+  var timeEl = document.getElementById("time")
+
+  //Creating eventlistener to popup quiz questions and start to counting down the timer
+  startBtn.addEventListener('click', )
+  //Button will take you to view high score page
+  highscoreBtn.addEventListener('click', )
+
+  //Create the variable and function for timer
+  var timerInterval = setInterval(function(){
+    secondsLeft--;
+    timeEl.textContent = secondsLeft + " seconds left till colorsplosion.";
+
+    if(secondsLeft === 0) {
+      clearInterval(timerInterval);
+      sendMessage();
+    }
+  })

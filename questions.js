@@ -1,5 +1,40 @@
+//creating the array for buttons
+var startBtn = document.getElementById("startBtn");
+var highscoreBtn = document.getElementById("highScores");
+// variable to grab time
+var timeEl = document.querySelector(".time");
+var mainEl = document.getElementById("main");
 
-// Creating the variables for each question
+
+
+//Creating eventlistener to popup quiz questions and start to counting down the timer
+startBtn.addEventListener('click', )
+//Button will take you to view high score page
+highscoreBtn.addEventListener('click', )
+
+//function for timer
+var secondsLeft = 75;
+
+function setTime() {
+  var timerInterval = setInterval(function() {
+    secondsLeft--;
+    timeEl.textContent = secondsLeft + " seconds left till colorsplosion.";
+
+    if(secondsLeft === 0) {
+      clearInterval(timerInterval);
+      sendMessage();
+    }
+
+  }, 1000);
+}
+
+function sendMessage() {
+  timeEl.textContent = " ";
+}
+
+setTime();
+
+  // Creating the variables for each question
 var questions = [
     {
       title: "Commonly used data types DO NOT include:",
@@ -52,24 +87,3 @@ var questions = [
         answer: "font-size"
     },
   ];
-
-  //creating the array for buttons
-  var startBtn = document.getElementById("startBtn");
-  var highscoreBtn = document.getElementById("highScores");
-  var timeEl = document.getElementById("time")
-
-  //Creating eventlistener to popup quiz questions and start to counting down the timer
-  startBtn.addEventListener('click', )
-  //Button will take you to view high score page
-  highscoreBtn.addEventListener('click', )
-
-  //Create the variable and function for timer
-  var timerInterval = setInterval(function(){
-    secondsLeft--;
-    timeEl.textContent = secondsLeft + " seconds left till colorsplosion.";
-
-    if(secondsLeft === 0) {
-      clearInterval(timerInterval);
-      sendMessage();
-    }
-  })

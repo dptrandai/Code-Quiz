@@ -1,89 +1,95 @@
-//creating the array for buttons
-var startBtn = document.getElementById("startBtn");
-var highscoreBtn = document.getElementById("highScores");
-// variable to grab time
-var timeEl = document.querySelector(".time");
-var mainEl = document.getElementById("main");
-
-
-
-//Creating eventlistener to popup quiz questions and start to counting down the timer
-startBtn.addEventListener('click', )
-//Button will take you to view high score page
-highscoreBtn.addEventListener('click', )
-
-//function for timer
-var secondsLeft = 75;
-
-function setTime() {
-  var timerInterval = setInterval(function() {
-    secondsLeft--;
-    timeEl.textContent = secondsLeft + " seconds left till colorsplosion.";
-
-    if(secondsLeft === 0) {
-      clearInterval(timerInterval);
-      sendMessage();
-    }
-
-  }, 1000);
-}
-
-function sendMessage() {
-  timeEl.textContent = " ";
-}
-
-setTime();
-
-  // Creating the variables for each question
-var questions = [
+// Creating the variables for each question
+  var questions = [
     {
-      title: "Commonly used data types DO NOT include:",
-      choices: ["strings", "booleans", "alerts", "numbers"],
-      answer: "alerts"
+      question: "Commonly used data types DO NOT include:",
+      answers: [
+        {text: "strings", correct: false},
+        {text: "booleans", correct: false},
+        {text: "alerts", correct: true},
+        {text: "numbers", correct: false}
+      ],
     },
     {
-      title: "The condition in an if / else statement is enclosed within ____.",
-      choices: ["quotes", "curly brackets", "parentheses", "square brackets"],
-      answer: "parentheses"
+      question: "The condition in an if / else statement is enclosed within ____.",
+      answers: [
+        {text: "quotes", correct: false},
+        {text: "curly brackets", correct: false},
+        {text: "parentheses", correct: true},
+        {text: "square brackets", correct: false}
+      ],
     },
     {
-        title: "Inside which HTML element do we put the JavaScript?",
-        choices: ["<js>", "<javascript>", "<scripting>", "<script>"],
-        answer: "<script>"
+        question: "Inside which HTML element do we put the JavaScript?",
+        answers: ["<js>", "<javascript>", "<scripting>", "<script>"],
+        answers: [
+          {text: "<js>", correct: false},
+          {text: "boolejavascriptans", correct: false},
+          {text: "scripting", correct: false},
+          {text: "<script>", correct: true}
+        ],
     },
     {
-        title: "Which event occurs when the user clicks on an HTML element?",
-        choices: ["onmouseclick", "onmouseover", "onchange", "onclick"],
-        answer: "onclick"
+        question: "Which event occurs when the user clicks on an HTML element?",
+        answers: [
+          {text: "onmouseclick", correct: false},
+          {text: "onmouseover", correct: false},
+          {text: "onchange", correct: false},
+          {text: "onclick", correct: true}
+        ],
     },
     {
-        title: "How do you declare a Javascript variable?",
-        choices: ["variable carName", "var carName", "v carName", "const carname"],
-        answer: "var carName"
+        question: "How do you declare a Javascript variable?",
+        answers: [
+          {text: "variable carName", correct: false},
+          {text: "var carName", correct: true},
+          {text: "v carName", correct: false},
+          {text: "const carname", correct: false}
+        ],
     },
     {
-        title: "How do you round the number 7.25, to the nearest integer?",
-        choices: ["Math.round(7.25)", "rnd(7.25)", "Math.rnd(7.25)", "round(7.25)"],
-        answer: "Math.round(7.25)"
+        question: "How do you round the number 7.25, to the nearest integer?",
+        answers: [
+          {text: "Math.round(7.25)", correct: true},
+          {text: "rnd(7.25)", correct: false},
+          {text: "Math.rnd(7.25)", correct: false},
+          {text: "round(7.25)", correct: false}
+        ],
     },
     {
-        title: "What does CSS stand for?",
-        choices: ["Computer Style Sheets", "Creative Style Sheets", "Colorful Style Sheets", "Cascading Style Sheets"],
-        answer: "Cascading Style Sheets"
+        question: "What does CSS stand for?",
+        answers: [
+          {text: "Computer Style Sheets", correct: false},
+          {text: "Creative Style Sheets", correct: false},
+          {text: "Colorful Style Sheets", correct: false},
+          {text: "Cascading Style Sheets", correct: true}
+        ],
     },
     {
-        title: "Which HTML attribute is used to define inline styles?",
-        choices: ["class", "font", "styles", "style"],
-        answer: "style"
+        question: "Which HTML attribute is used to define inline styles?",
+        answers: [
+          {text: "class", correct: false},
+          {text: "font", correct: false},
+          {text: "styles", correct: false},
+          {text: "style", correct: true}
+        ],
     },
     {
-        title: "Which CSS property is used to change the text color of an element?",
-        choices: ["text-color", "color", "fgcolor", "font-color"],
-        answer: "color"
+        question: "Which CSS property is used to change the text color of an element?",
+        answers: [
+          {text: "text-color", correct: false},
+          {text: "color", correct: true},
+          {text: "fgcolor", correct: false},
+          {text: "font-color", correct: false}
+        ],
     },
     {
-        title: "Which CSS property controls the text size?",
-        choices: ["font-style", "text-style", "text-size", "font-size"],
-        answer: "font-size"
+        question: "Which CSS property controls the text size?",
+        answers: ["font-style", "text-style", "text-size", "font-size"],
+        answers: [
+          {text: "strings", correct: false},
+          {text: "booleans", correct: false},
+          {text: "alerts", correct: true},
+          {text: "numbers", correct: false}
+        ],
     },
   ];

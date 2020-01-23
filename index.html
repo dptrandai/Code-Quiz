@@ -12,17 +12,27 @@
     <header>
         <div>
             <button type="button" class="btn btn-primary" id="highScores">View Highscores</button>
+            <text id="clock">Time Remaining:</text>
         </div>
     </header>
-
-    <h1 class="time">time</h1>
-    
-
-    <div id="beginning">
-        <h1 id="h1">Coding Quiz</h1>
-        <p id="instructions">This is a coding quiz. You will get 75 seconds to finish the questions. At the end your score will be saved for viewing. Each question answered incorrectly will penalize you by 10 seconds.</p>
-        <a href="./quiz.html" type="button" class="btn btn-primary" id="startBtn">Start Quiz</a>
+    <div id="container">
+        <div id="beginning">
+            <h1 id="h1">Coding Quiz</h1>
+            <p id="instructions">This is a coding quiz. You will get 75 seconds to finish the questions. At the end your score will be saved for viewing. Each question answered incorrectly will penalize you by 10 seconds.</p>
+            <button type="button" class="btn btn-primary" id="start">Start Quiz</button>
+        </div>
+        <div id="questions-container" class="hide">
+            <div id="question">Question</div>
+            <div id="answers">
+                <button id="btn">Answer1</button>
+                <button id="btn">Answer2</button>
+                <button id="btn">Answer3</button>
+                <button id="btn">Answer3</button>
+            </div>
+        </div>
     </div>
+    <script src="./script.js"></script>
+    <script src="./questions.js"></script>
     <script src="./questions.js"></script>    
 </body>
 </html>

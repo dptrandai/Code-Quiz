@@ -33,6 +33,7 @@ function startGame(){
 function nextQuestion(){
     //function to reset everything related to form
     resetForm()
+    //will set the question but in a random order 
     showTheQuestion(shuffledQuestions[currentQuestion])
 }
 
@@ -52,8 +53,8 @@ function showTheQuestion(question){
     });
 }
 
+//if there is a child in the answer button element, then we will remove it
 function resetForm(){
-    //if there is a child in the answer button element, then we will remove it
     while (answerBtn.firstChild){
         answerBtn.removeChild(answerBtn.firstChild)
     }

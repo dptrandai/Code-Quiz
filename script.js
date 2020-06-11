@@ -1,94 +1,54 @@
-//Creating the variables for buttons
-var startBtn = document.getElementById('start');
-var highscoreBtn = document.getElementById('highscores');
-var questionsContainer = document.getElementById('questions-container');
-var beginningList = document.getElementById('beginning');
-var questionsE1 = document.getElementById('question');
-var answerBtn = document.getElementById('answers');
-var timeE1 = document.getElementById('clock');
+var start = document.getElementById('thisBtn')
+var questionCont = document.getElementById('question1')
+var timeEl = document.querySelector(".time");
+var main = document.getElementById('mainBtn')
+//var start = document.getElementById("startBtn")
 
+var secondsLeft = 75;
 
-//When clicking on the start button, the timer and quiz will start
-startBtn.addEventListener('click', startGame, startTimer);
-
-
-
-let shuffledQuestions, currentQuestion
-
-function startGame(){
-    console.log('Started')
-    //This will hide the beginning div and start button
-    startBtn.classList.add('hide')
-    beginningList.classList.add('hide')
-    //Once the above clears, the question div will show  
-    questionsContainer.classList.remove('hide')
-    //Shuffles the questions and displays a question from the questions array in a random order
-    shuffledQuestions = questions.sort(()=>Math.random() -.5)
-    //Setting current question to 0 
-    currentQuestion = 0
-    //Below will set the first question
-    nextQuestion()
-}
-
-function nextQuestion(){
-    //function to reset everything related to form
-    resetForm()
-    //will set the question but in a random order 
-    showTheQuestion(shuffledQuestions[currentQuestion])
-}
-
-//This will show the question in the question field. Also inside will be a function to set the answers on each button
-function showTheQuestion(question){
-    questionsE1.innerText = question.question
-    question.answers.forEach(answers => {
-        var button = document.createElement('button')
-        button.innerText = answers.text
-        button.classList.add('btn')
-        //Create If statement, saying if the clicked button is the correct answer log this into our dataset to count later for highscore.
-        if (answers.correct){
-            button.dataset.answers = answers.correct
-        }
-        button.addEventListener('click', selectAnswer)
-        answerBtn.appendChild(button)
-    });
-}
-
-//if there is a child in the answer button element, then we will remove it
-function resetForm(){
-    while (answerBtn.firstChild){
-        answerBtn.removeChild(answerBtn.firstChild)
-    }
-}
-
-function selectAnswer(){
-
-}
-
-function startTimer(){
-
-}
-
-
-/////////////////////////////////////////////////////////////////
-
-//functions and variables to create timer.
-var setTime = 75
-
+//function for the countdown timer 
 function setTime() {
-    var timerInterval = setInterval(function() {
-      secondsLeft--;
-      timeEl.textContent = secondsLeft + " seconds";
+  var timerInterval = setInterval(function() {
+    secondsLeft--;
+    timeEl.textContent = secondsLeft + " seconds left in quiz";
+
+    if(secondsLeft === 0) {
+      clearInterval(timerInterval);
+      sendMessage();
+      //trying to make the 1st question hide in the 1st div
+      
+      
+    }
+
+  }, 1000);
+
   
-      if(secondsLeft === 0) {
-        clearInterval(timerInterval);
-        sendMessage();
-      }
-  
-    }, 1000);
+}
+
+
+
+
+//this hides the 1st div and diplays the second div that contains the questions, it also starats the time. "method found on w3 schools"
+function startQuiz() {
+  var x = document.getElementById("beg");
+  var y = document.getElementById("question1")
+  if (x.style.display == "none") {
+      x.style.display = "block";
+      y.style.display = "none";
+  } 
+  else {
+      x.style.display = "none";
+      y.style.display = "block";
+      setTime();
   }
+
   
-  function sendMessage() {
-    timeEl.textContent = " ";
-  }
-  
-  setTime();
+}
+
+
+
+
+//start.addEventListener("click", setTime)
+
+
+//how to get the questions to hide in the homepage, how to loop through the questions, how to stop the time and save time left, 

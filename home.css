@@ -1,0 +1,30 @@
+#beg{
+    text-align: center;
+     padding: 50px; 
+    margin: 0;
+    background: darkgrey;
+    margin-top: 100px;
+    
+}
+
+body{
+    
+     background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8kjYWHtmqiHF5vhuLq4EwKDOrC6LOjROfigGjDMqxNqEepKru0Q&s); 
+     color: white;
+}
+
+.btnColor {
+    background-color: black;
+    color: darkgreen;
+}
+
+#allDoneH{
+    padding: 35px;
+    margin: 0;
+    background: red;
+    width: 200px;
+}
+
+.hide{
+    display: none;
+}
